@@ -294,6 +294,20 @@ open class FloatyItem: UIView {
       }
     }
   }
+    
+    var _accessibilityLabel: String? = nil
+    /**
+     Item's accesibilitylabel
+     */
+    @objc open override var accessibilityLabel: String? {
+     get {
+       return _accessibilityLabel
+     }
+     set(newValue) {
+        _accessibilityLabel = newValue
+        self.bringSubviewToFront(self)
+      }
+    }
 }
 
 private extension CGPoint {
